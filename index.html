@@ -3,220 +3,362 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tasmir Hossain Zihad</title>
+        <title>Tasmir Hossain Zihad – Portfolio</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+            rel="stylesheet"
+        />
         <style>
-            body {
-                font-family: Arial, sans-serif;
+            :root {
+                --bg: #f9fafb;
+                --text: #111827;
+                --primary: #2563eb;
+                --card-bg: #ffffff;
+                --shadow: rgba(0, 0, 0, 0.05) 0px 10px 15px;
+            }
+
+            * {
                 margin: 0;
                 padding: 0;
-                background-color: #f7f7f7;
-                color: #333;
+                box-sizing: border-box;
             }
-            section {
-                padding: 60px 20px;
+
+            body {
+                font-family: "Inter", sans-serif;
+                background: var(--bg);
+                color: var(--text);
+                scroll-behavior: smooth;
             }
-            .container {
-                max-width: 800px;
-                margin: 0 auto;
+
+            header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background: #fff;
+                box-shadow: var(--shadow);
+                z-index: 1000;
             }
-            h1,
-            h2,
-            h3 {
-                text-align: center;
+
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 1200px;
+                margin: auto;
+                padding: 1rem;
             }
-            h1 {
-                font-size: 3em;
-                margin-bottom: 10px;
+
+            .nav-links {
+                display: flex;
+                gap: 1.5rem;
             }
-            h2 {
-                font-size: 2em;
-                margin-bottom: 20px;
-            }
-            h3 {
-                font-size: 1.5em;
-                margin-top: 30px;
-                margin-bottom: 10px;
-            }
-            ul {
-                list-style-type: disc;
-                padding-left: 20px;
-            }
-            a {
-                color: #007bff;
+
+            .nav-links a {
                 text-decoration: none;
+                color: var(--text);
+                font-weight: 600;
             }
-            a:hover {
-                text-decoration: underline;
+
+            .menu-toggle {
+                display: none;
+                flex-direction: column;
+                gap: 4px;
+                cursor: pointer;
             }
-            p {
-                margin-bottom: 10px;
+
+            .menu-toggle div {
+                width: 25px;
+                height: 3px;
+                background: var(--text);
+            }
+
+            .hero {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding-top: 5rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+                font-weight: 800;
+                margin-bottom: 0.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                color: #4b5563;
+            }
+
+            section {
+                max-width: 1100px;
+                margin: auto;
+                padding: 4rem 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
                 text-align: center;
             }
-            .text-center {
-                text-align: center;
+
+            .projects {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
             }
-            .spacer > li {
-                margin-bottom: 15px;
+
+            .card {
+                background: var(--card-bg);
+                padding: 1.5rem;
+                border-radius: 1rem;
+                box-shadow: var(--shadow);
+                transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            .card.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .card h3 {
+                margin-bottom: 0.5rem;
+                color: var(--primary);
+            }
+
+            .skills span {
+                display: inline-block;
+                background: #e0e7ff;
+                color: #1e40af;
+                padding: 0.4rem 0.8rem;
+                border-radius: 0.5rem;
+                margin: 0.3rem;
+                font-weight: 600;
+            }
+
+            footer {
+                text-align: center;
+                padding: 2rem;
+                font-size: 0.9rem;
+                color: #6b7280;
+            }
+
+            @media (max-width: 768px) {
+                .nav-links {
+                    display: none;
+                    flex-direction: column;
+                    background: white;
+                    position: absolute;
+                    top: 60px;
+                    right: 1rem;
+                    padding: 1rem;
+                    border-radius: 8px;
+                    box-shadow: var(--shadow);
+                }
+
+                .nav-links.show {
+                    display: flex;
+                }
+
+                .menu-toggle {
+                    display: flex;
+                }
             }
         </style>
     </head>
     <body>
-        <section id="about" class="bg-white">
-            <div class="container">
-                <h1>Hello!</h1>
-                <h2>I'm Tasmir Hossain Zihad</h2>
-                <p>
-                    I'm currently pursuing my B.Sc. in Computer Science and
-                    Engineering at KUET.
-                </p>
-                <p>
-                    Passionate about full-stack development, systems design, and
-                    AI tools.
-                </p>
-                <p>
-                    <a href="https://github.com/tasmirz" target="_blank"
-                        >GitHub</a
-                    >
-                    |
-                    <a href="https://linkedin.com/in/tasmir" target="_blank"
-                        >LinkedIn</a
-                    >
-                </p>
+        <header>
+            <div class="navbar">
+                <strong>Zihad</strong>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <nav class="nav-links" id="navLinks">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1 id="animatedName"></h1>
+            <p>CSE Student | Robotics Enthusiast | Open Source Contributor</p>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I’m Tasmir Hossain Zihad, a Computer Science student at KUET.
+                Former Vice President and Advisor at the Gregorian Math Club.
+                Passionate about robotics, AI and space programming challenges.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="projects">
+                <div class="card">
+                    <h3>Programming</h3>
+                    <p>
+                        C / C++, Python (Ultralytics, Llama_Index), JavaScript
+                        (Node.js, MongoDB), PHP (LAMPP Stack)
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Tools & Platforms</h3>
+                    <p>Git, GitHub, Docker, VMs, Linux (Arch)</p>
+                </div>
+                <div class="card">
+                    <h3>Design & Editing</h3>
+                    <p>Blender, Illustrator, GIMP, Inkscape</p>
+                </div>
             </div>
         </section>
 
-        <section id="skills" class="bg-gray">
-            <div class="container">
-                <h2>Skills</h2>
-                <div>
-                    <h3>Programming Languages</h3>
-                    <ul>
-                        <li>C / C++</li>
-                        <li>Python (Ultralytics, Llama_Index)</li>
-                        <li>JavaScript (Full Stack with Node.js, MongoDB)</li>
-                        <li>LAMPP Stack: PHP, MySQL</li>
-                    </ul>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="card">
+                    <h3>🚀 NASA-JAXA Kibo Robot Challenge</h3>
+                    <p>
+                        Ranked 3rd globally (2024) for AI-based image processing
+                        onboard ISS-Astrobee robot. Team Mukul, KUET.
+                    </p>
+                    <a
+                        href="https://www.dailymessenger.net/science-it/news/28421"
+                        target="_blank"
+                        >Read more</a
+                    >
+                </div>
+                <div class="card">
+                    <h3>💻 GitHub Repositories</h3>
+                    <p>
+                        23+ public repositories including robotics simulations,
+                        web apps, and algorithms.
+                    </p>
+                    <a href="https://github.com/tasmirz" target="_blank"
+                        >Visit GitHub</a
+                    >
+                </div>
+                <div class="card">
+                    <h3>📺 YouTube Channel</h3>
+                    <p>
+                        Uploading project demos and tech content on robotics and
+                        programming.
+                    </p>
+                    <a
+                        href="https://www.youtube.com/channel/UCx6RndAGs70hKQh8p21wh4A"
+                        target="_blank"
+                        >Visit YouTube</a
+                    >
+                </div>
+            </div>
+        </section>
 
-                    <h3>Tools & Software</h3>
+        <section id="experience">
+            <h2>Life & Experience</h2>
+            <div class="projects">
+                <div class="card">
+                    <h3>👨‍💼 Experience</h3>
                     <ul>
-                        <li>Git & GitHub</li>
-                        <li>Linux (Arch)</li>
-                        <li>Docker, Virtual Machines</li>
-                        <li>Blender, Illustrator, GIMP, Inkscape</li>
-                        <li>Office Software</li>
+                        <li>
+                            <strong>Troop Leader</strong>, St. Gregory’s Scout
+                            Troop (2017–2018)
+                        </li>
+                        <li>
+                            <strong>Vice President</strong>, Gremorian Math Club
+                            (2017–2018)
+                        </li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🎓 Education</h3>
+                    <ul>
+                        <li>KUET – B.Sc. in CSE (CGPA 3.75, Rank 12)</li>
+                        <li>St. Gregory’s College – HSC: GPA 5.0</li>
+                        <li>St. Gregory’s High School – SSC: GPA 5.0</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>🏆 Achievements</h3>
+                    <ul>
+                        <li>KUET Rising Team – Bitfest 2025</li>
+                        <li>
+                            2nd Runner-up (Int’l), Champion (National) – 5th
+                            Kibo RPC
+                        </li>
+                        <li>Top 20 – Interschool Programming Contest 2018</li>
+                        <li>Top 80% – IFSE Global Mathematics 2017</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="bg-white">
-            <div class="container">
-                <h2>Projects</h2>
-                <ul class="spacer">
-                    <li>
-                        <strong>Computer:</strong> 29-bit 5-stage pipelined RISC
-                        processor.
-                        <a
-                            href="https://github.com/tasmirz/Computer"
-                            target="_blank"
-                            >Repository</a
-                        >
-                    </li>
-                    <li>
-                        <strong>Alphabet Labeler:</strong> Tool to label PDFs.
-                        <a
-                            href="https://github.com/tasmirz/handwritten-labeler"
-                            target="_blank"
-                            >Repository</a
-                        >
-                    </li>
-                    <li>
-                        <strong>RPG Game:</strong> OOP game in C++ with
-                        multithreading.
-                        <a
-                            href="https://github.com/tasmirz/RPG-CSE1206"
-                            target="_blank"
-                            >Repository</a
-                        >
-                    </li>
-                    <li>
-                        <strong>Home Automation:</strong> EasyEDA project.
-                        <a
-                            href="https://github.com/tasmirz/home-automation"
-                            target="_blank"
-                            >Repository</a
-                        >
-                    </li>
-                    <li>
-                        <strong>Terra:</strong> NASA-based geo-visual data app.
-                        <a
-                            href="https://github.com/tasmirz/terra"
-                            target="_blank"
-                            >Repository</a
-                        >
-                    </li>
-                </ul>
-            </div>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>
+                Email:
+                <a href="mailto:tasmir@tuta.io">tasmir@example.com</a>
+            </p>
+            <p>
+                GitHub:
+                <a href="https://github.com/tasmirz" target="_blank"
+                    >github.com/tasmirz</a
+                >
+            </p>
         </section>
 
-        <section id="lyf" class="bg-gray">
-            <div class="container">
-                <h2>Life & Experience</h2>
+        <footer>&copy; 2025 Tasmir Hossain Zihad. All rights reserved.</footer>
 
-                <h3>Experience</h3>
-                <ul>
-                    <li>
-                        <strong>Troop Leader</strong>, St. Gregory’s Scout Troop
-                        (2017–2018)
-                    </li>
-                    <li>
-                        <strong>Vice President</strong>, Gremorian Math Club
-                        (2017–2018)
-                    </li>
-                </ul>
+        <script>
+            function toggleMenu() {
+                document.getElementById("navLinks").classList.toggle("show");
+            }
 
-                <h3>Education</h3>
-                <ul>
-                    <li>KUET, B.Sc. in CSE – CGPA 3.75 (Rank 12)</li>
-                    <li>
-                        St. Gregory’s High School and College – HSC: GPA 5.0
-                    </li>
-                    <li>St. Gregory’s High School – SSC: GPA 5.0</li>
-                </ul>
+            const name = "Tasmir Hossain Zihad";
+            const nameContainer = document.getElementById("animatedName");
+            name.split("").forEach((char, i) => {
+                const span = document.createElement("span");
+                span.textContent = char;
+                span.style.opacity = 0;
+                span.style.transition = `opacity 0.3s ease ${i * 50}ms`;
+                nameContainer.appendChild(span);
+                setTimeout(() => (span.style.opacity = 1), i * 50);
+            });
 
-                <h3>Achievements</h3>
-                <ul>
-                    <li>KUET Rising Team – Bitfest 2025</li>
-                    <li>
-                        2nd Runner-up (Int’l), Champion (National) – 5th Kibo
-                        RPC
-                    </li>
-                    <li>Top 20 – Interschool Programming Contest 2018</li>
-                    <li>Top 80% – IFSE Global Mathematics 2017</li>
-                </ul>
-            </div>
-        </section>
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        }
+                    });
+                },
+                {
+                    threshold: 0.1,
+                },
+            );
 
-        <section id="contact" class="bg-white">
-            <div class="container text-center">
-                <h2>Contact</h2>
-                <p>
-                    Email:
-                    <a href="mailto:tasmir@tuta.io">tasmir@tuta.io</a>
-                </p>
-                <p>
-                    GitHub:
-                    <a href="https://github.com/tasmirz" target="_blank"
-                        >@tasmirz</a
-                    >
-                </p>
-                <p>
-                    LinkedIn:
-                    <a href="https://linkedin.com/in/tasmir" target="_blank"
-                        >linkedin.com/in/tasmir</a
-                    >
-                </p>
-            </div>
-        </section>
+            document
+                .querySelectorAll(".card")
+                .forEach((el) => observer.observe(el));
+        </script>
     </body>
 </html>

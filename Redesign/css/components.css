@@ -1,0 +1,113 @@
+/* Reusable UI component styles */
+
+/* Buttons */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--spacing-sm) var(--spacing-md);
+	border-radius: var(--border-radius-sm);
+	font-family: var(--font-mono);
+	font-size: 0.9rem;
+	transition: all var(--transition-fast);
+	text-decoration: none;
+}
+
+.btn:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-small);
+}
+
+.btn .material-icons {
+	margin-right: var(--spacing-sm);
+}
+
+/* Social buttons */
+.social-btn {
+	display: flex;
+	align-items: center;
+	padding: var(--spacing-sm) var(--spacing-md);
+	border-radius: var(--border-radius-sm);
+	text-decoration: none;
+	transition: all var(--transition-normal);
+	font-family: var(--font-mono);
+	font-size: 0.9rem;
+}
+
+.social-btn .material-icons {
+	margin-right: var(--spacing-sm);
+	font-size: 1.2rem;
+}
+
+.social-btn:hover {
+	transform: translateY(-2px);
+}
+
+/* Icon buttons */
+.icon-btn,
+.social-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: var(--border-radius-round);
+	transition: all var(--transition-normal);
+}
+
+/* Theme toggle */
+.theme-toggle, 
+.hamburger-menu {
+	background: none;
+	border: none;
+	cursor: pointer;
+	transition: all var(--transition-fast);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: var(--border-radius-round);
+	padding: 0;
+	margin: 0;
+}
+
+.theme-toggle .material-icons, 
+.hamburger-menu .material-icons {
+	font-size: 1.2rem;
+}
+
+/* Typography */
+.typewriter {
+	display: inline-block;
+	position: relative;
+	font-weight: 700;
+	font-size: 2.5rem;
+	text-align: left;
+}
+
+.cursor {
+	display: inline-block;
+	animation: blink 1s infinite;
+}
+
+@keyframes blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}
+
+.subtitle {
+	margin-top: var(--spacing-sm);
+	font-size: 1.2rem;
+	font-family: var(--font-mono);
+	opacity: 0.9;
+	text-align: left;
+}
+
+.email-text {
+	font-family: var(--font-mono);
+	text-decoration: none;
+	opacity: 0.9;
+	transition: color var(--transition-fast);
+	text-align: left;
+}

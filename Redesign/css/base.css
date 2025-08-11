@@ -1,0 +1,123 @@
+/* Foundational styles, variables, and resets */
+
+:root {
+	/* Typography */
+	--font-primary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		sans-serif;
+	--font-mono: "Courier New", monospace;
+
+	/* Spacing */
+	--spacing-xs: 0.25rem;
+	--spacing-sm: 0.5rem;
+	--spacing-md: 1rem;
+	--spacing-lg: 2rem;
+	--spacing-xl: 3rem;
+
+	/* Layout */
+	--header-height: 80px;
+	--content-width-max: 1200px;
+	--section-padding-desktop: 20%;
+	--section-padding-tablet: 10%;
+	--section-padding-mobile: 8%;
+
+	/* Transitions */
+	--transition-fast: 0.2s ease;
+	--transition-normal: 0.3s ease;
+	--transition-slow: 0.5s ease;
+
+	/* Border Radius */
+	--border-radius-sm: 4px;
+	--border-radius-md: 8px;
+	--border-radius-lg: 12px;
+	--border-radius-round: 50%;
+}
+
+/* Reset and base styles */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: var(--font-primary);
+	min-height: 100vh;
+	width: 100%;
+	overflow-x: hidden;
+	transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+a {
+	text-decoration: none;
+	transition: color var(--transition-fast);
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+img,
+svg {
+	max-width: 100%;
+	height: auto;
+}
+
+button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-family: inherit;
+}
+
+/* Common utility classes */
+.container {
+	width: 100%;
+	max-width: var(--content-width-max);
+	margin: 0 auto;
+	padding: 0 var(--spacing-md);
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets///icons.woff2') format('woff2'),
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* adjustable */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+    font-size: 24px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+}

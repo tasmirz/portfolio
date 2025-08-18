@@ -1,6 +1,4 @@
-/* Reusable UI component styles */
-
-/* Buttons */
+/* Reusable UI components */
 .btn {
 	display: inline-flex;
 	align-items: center;
@@ -22,7 +20,6 @@
 	margin-right: var(--spacing-sm);
 }
 
-/* Social buttons */
 .social-btn {
 	display: flex;
 	align-items: center;
@@ -43,7 +40,6 @@
 	transform: translateY(-2px);
 }
 
-/* Icon buttons */
 .icon-btn,
 .social-icon {
 	display: inline-flex;
@@ -55,7 +51,6 @@
 	transition: all var(--transition-normal);
 }
 
-/* Theme toggle */
 .theme-toggle, 
 .hamburger-menu {
 	background: none;
@@ -77,7 +72,6 @@
 	font-size: 1.2rem;
 }
 
-/* Typography */
 .typewriter {
 	display: inline-block;
 	position: relative;
@@ -110,4 +104,30 @@
 	opacity: 0.9;
 	transition: color var(--transition-fast);
 	text-align: left;
+}
+
+.loading-message,
+.error-message {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 200px;
+	text-align: center;
+	padding: var(--spacing-lg);
+	font-family: var(--font-mono);
+}
+
+.loading-message p,
+.error-message p {
+	margin: 0;
+	font-size: 1.1rem;
+	opacity: 0.8;
+}
+
+.error-message {
+	color: var(--accent-red, #cc241d);
+}
+
+.loading-message {
+	color: var(--accent-blue, #458588);
 }

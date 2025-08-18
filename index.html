@@ -1,164 +1,150 @@
-<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tasmir Hossain Zihad – Portfolio</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="./styles.css" />
-    </head>
-    <body>
-        <header>
-            <div class="navbar">
-                <strong>Zihad</strong>
-                <div class="menu-toggle" onclick="toggleMenu()">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <nav class="nav-links" id="navLinks">
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-            </div>
-        </header>
-
-        <section class="hero">
-            <h1 id="animatedName"></h1>
-            <p>CSE Student | Robotics Enthusiast | Open Source Contributor</p>
-        </section>
-
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I’m Tasmir Hossain Zihad, a Computer Science student at KUET.
-                Former Vice President and Advisor at the Gregorian Math Club.
-                Passionate about robotics, AI and space programming challenges.
-            </p>
-        </section>
-
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="projects">
-                <div class="card">
-                    <h3>Programming</h3>
-                    <p>
-                        C / C++, Python (Ultralytics, Llama_Index), JavaScript
-                        (Node.js, MongoDB), PHP (LAMPP Stack)
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Tools & Platforms</h3>
-                    <p>Git, GitHub, Docker, VMs, Linux (Arch)</p>
-                </div>
-                <div class="card">
-                    <h3>Design & Editing</h3>
-                    <p>Blender, Illustrator, GIMP, Inkscape</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects">
-                <div class="card">
-                    <h3>🚀 NASA-JAXA Kibo Robot Challenge</h3>
-                    <p>
-                        Ranked 3rd globally (2024) for AI-based image processing
-                        onboard ISS-Astrobee robot. Team Mukul, KUET.
-                    </p>
-                    <a
-                        href="https://www.dailymessenger.net/science-it/news/28421"
-                        target="_blank"
-                        >Read more</a
-                    >
-                </div>
-                <div class="card">
-                    <h3>💻 GitHub Repositories</h3>
-                    <p>
-                        23+ public repositories including robotics simulations,
-                        web apps, and algorithms.
-                    </p>
-                    <a href="https://github.com/tasmirz" target="_blank"
-                        >Visit GitHub</a
-                    >
-                </div>
-                <div class="card">
-                    <h3>📺 YouTube Channel</h3>
-                    <p>
-                        Uploading project demos and tech content on robotics and
-                        programming.
-                    </p>
-                    <a
-                        href="https://www.youtube.com/channel/UCx6RndAGs70hKQh8p21wh4A"
-                        target="_blank"
-                        >Visit YouTube</a
-                    >
-                </div>
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2>Life & Experience</h2>
-            <div class="projects">
-                <div class="card">
-                    <h3>👨‍💼 Experience</h3>
-                    <ul>
-                        <li>
-                            <strong>Troop Leader</strong>, St. Gregory’s Scout
-                            Troop (2017–2018)
-                        </li>
-                        <li>
-                            <strong>Vice President</strong>, Gremorian Math Club
-                            (2017–2018)
-                        </li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>🎓 Education</h3>
-                    <ul>
-                        <li>KUET – B.Sc. in CSE (CGPA 3.75, Rank 12)</li>
-                        <li>St. Gregory’s College – HSC: GPA 5.0</li>
-                        <li>St. Gregory’s High School – SSC: GPA 5.0</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>🏆 Achievements</h3>
-                    <ul>
-                        <li>KUET Rising Team – Bitfest 2025</li>
-                        <li>
-                            2nd Runner-up (Int’l), Champion (National) – 5th
-                            Kibo RPC
-                        </li>
-                        <li>Top 20 – Interschool Programming Contest 2018</li>
-                        <li>Top 80% – IFSE Global Mathematics 2017</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>
-                Email:
-                <a href="mailto:tasmir@tuta.io">tasmir@example.com</a>
-            </p>
-            <p>
-                GitHub:
-                <a href="https://github.com/tasmirz" target="_blank"
-                    >github.com/tasmirz</a
-                >
-            </p>
-        </section>
-
-        <footer>&copy; 2025 Tasmir Hossain Zihad. All rights reserved.</footer>
-
-        <script src="script.js"></script>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Zihad's</title>
+		<!-- Base styles first -->
+		<link rel="stylesheet" href="css/base.css" />
+		<!-- Theming styles -->
+		<link rel="stylesheet" href="css/colors.css" />
+		<link rel="stylesheet" href="css/dark-theme.css" />
+		<!-- Component styles -->
+		<link rel="stylesheet" href="css/components.css" />
+		<!-- Layout styles -->
+		<link rel="stylesheet" href="css/layout.css" />
+		<!-- Responsive styles -->
+		<link rel="stylesheet" href="css/tablet.css" />
+		<link rel="stylesheet" href="css/phone.css" />
+	</head>
+	<body>
+		<header class="header-controls">
+			<nav>
+				<ul id="nav-menu">
+					<li><a href="#welcome">hey</a></li>
+					<li><a href="#about">about</a></li>
+					<li><a href="#projects">projects</a></li>
+					<li><a href="#lyf">lyf</a></li>
+					<li><a href="#contact">contact</a></li>
+				</ul>
+			</nav>
+			<div class="header-buttons">
+				<button class="theme-toggle" id="theme-toggle">
+					<span class="material-icons" id="theme-icon">light_mode</span>
+				</button>
+				<button class="hamburger-menu" id="hamburger-menu">
+					<span class="material-icons" id="menu-icon">menu</span>
+				</button>
+			</div>
+		</header>
+		<main>
+			<section id="welcome">
+				<div class="welcome-content">
+					<h1><span id="typewriter" class="typewriter"></span></h1>
+					<div class="subtitle">Full-Stack Developer</div>
+					<div class="contact-info">
+						<a href="mailto:zihad@tuta.io" class="email-text">zihad@tuta.io</a>
+					</div>
+					<div class="social-icons">
+						<a href="https://github.com/tasmirz" target="_blank" class="social-btn github">
+							<span class="material-icons">code</span> <span class="extra-text">GitHub</span>
+						</a>
+						<a href="https://linkedin.com/in/tasmirz" target="_blank" class="social-btn linkedin">
+							<span class="material-icons">business</span> <span class="extra-text">LinkedIn</span>
+						</a>
+					</div>
+				</div>
+			</section>
+			<section id="about">
+				<div class="about-container">
+					<div class="about-content">
+						<h2>About Me</h2>
+						<div class="skills-section">
+							<h3>Skills</h3>
+						</div>
+					</div>
+					<div class="about-portrait">
+						<img src="assets/portfolio.png" alt="Portrait" class="portrait-img">
+					</div>
+				</div>
+			</section>
+			<section id="projects">
+				<h2>My Projects</h2>
+				<div class="projects-container">
+				</div>
+			</section>
+			<section id="contact">
+				<h2>Contact Me</h2>
+				<div class="contact-container">
+					<div class="contact-info">
+						<h3>Get In Touch</h3>
+						<p>I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
+						<div class="contact-details">
+							<div class="contact-item">
+								<span class="material-icons">email</span>
+								<span>zihad@tuta.io</span>
+							</div>
+							<div class="contact-item">
+								<span class="material-icons">location_on</span>
+								<span>Khulna, Bangladesh</span>
+							</div>
+						</div>
+					</div>
+					<form class="contact-form" id="contact-form">
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" id="name" name="name" required>
+						</div>
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input type="email" id="email" name="email" required>
+						</div>
+						<div class="form-group">
+							<label for="subject">Subject</label>
+							<input type="text" id="subject" name="subject" required>
+						</div>
+						<div class="form-group">
+							<label for="message">Message</label>
+							<textarea id="message" name="message" rows="5" required></textarea>
+						</div>
+						<button type="submit" class="submit-btn">
+							<span class="material-icons">send</span>
+							Send Message
+						</button>
+					</form>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<div class="footer-content">
+				<div class="footer-section">
+					<h4>Tasmir Hossain Zihad</h4>
+					<p>Full-Stack Developer passionate about creating innovative solutions.</p>
+				</div>
+				<div class="footer-section">
+					<h4>Quick Links</h4>
+					<nav class="footer-nav">
+						<a href="#welcome">Home</a>
+						<a href="#about">About</a>
+						<a href="#projects">Projects</a>
+						<a href="#contact">Contact</a>
+					</nav>
+				</div>
+				<div class="footer-section">
+					<h4>Connect</h4>
+					<div class="footer-social">
+						<a href="https://github.com/tasmirz" target="_blank" class="footer-social-link">
+							<span class="material-icons">code</span>
+						</a>
+						<a href="https://linkedin.com/in/tasmirz" target="_blank" class="footer-social-link">
+							<span class="material-icons">business</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>&copy; 2025 Tasmir Hossain Zihad. All rights reserved.</p>
+			</div>
+		</footer>
+		<script type="module" src="js/main.js"></script>
+	</body>
 </html>

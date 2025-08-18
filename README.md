@@ -77,7 +77,7 @@ See `js/WEBGL-DOCS.md` for details on the WebGL implementation.
 
 ```bash
 # Using Python to create a simple HTTP server
-python -m http.server 8000
+npx live-server --port=3000   
 ```
 
 3. Open `http://localhost:8000` in your browser

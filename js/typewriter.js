@@ -6,8 +6,8 @@ export default class TypeWriter {
         this.currentCharIndex = 0;
         this.isDeleting = false;
         this.options = {
-            typingSpeed: options.typingSpeed || 100,
-            deletingSpeed: options.deletingSpeed || 50,
+            typingDelay: options.typingSpeed || 100, 
+            deletingDelay: options.deletingSpeed || 50,
             pauseBeforeDelete: options.pauseBeforeDelete || 2000,
             pauseBeforeType: options.pauseBeforeType || 500,
             loop: options.loop !== undefined ? options.loop : true
@@ -17,9 +17,9 @@ export default class TypeWriter {
 
     startTyping() {
         const currentText = this.texts[this.currentTextIndex];
-        const typingSpeed = this.isDeleting 
-            ? this.options.deletingSpeed 
-            : this.options.typingSpeed;
+        const typingDelay = this.isDeleting 
+            ? this.options.deletingDelay 
+            : this.options.typingDelay;
         
         if (this.isDeleting) {
             this.currentCharIndex--;
@@ -27,9 +27,9 @@ export default class TypeWriter {
             this.currentCharIndex++;
         }
 
-        this.element.innerHTML = `${currentText.substring(0, this.currentCharIndex)}<span class="cursor">|</span>`;
+        this.element.innerHTML = `${currentText.substring(0, this.currentCharIndex)}<span class="cursor">|</span>`; // the last | cursor    
 
-        if (!this.isDeleting && this.currentCharIndex === currentText.length) {
+        if (!this.isDeleting && this.currentCharIndex === currentText.length) { //reached end
             this.isDeleting = true;
             setTimeout(() => this.startTyping(), this.options.pauseBeforeDelete);
         } else if (this.isDeleting && this.currentCharIndex === 0) {
@@ -39,10 +39,9 @@ export default class TypeWriter {
             if (!this.options.loop && this.currentTextIndex === 0) {
                 return;
             }
-            
             setTimeout(() => this.startTyping(), this.options.pauseBeforeType);
         } else {
-            setTimeout(() => this.startTyping(), typingSpeed);
+            setTimeout(() => this.startTyping(), typingDelay);
         }
     }
 }

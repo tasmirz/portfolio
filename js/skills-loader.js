@@ -25,7 +25,7 @@ class SkillsLoader {
             return data.skillCategories;
         } catch (error) {
             console.error('Error fetching skills:', error);
-            this.showState('error', 'Failed to load skills. Please try again later.');
+            this.displayState('error', 'Failed to load skills. Please try again later.');
             return [];
         }
     }
@@ -43,42 +43,40 @@ class SkillsLoader {
         `;
     }
 
-    renderSkills(skillCategories) {
+    displayState(type, content) {
         if (!this.skillsContainer) {
             console.error('Skills container not found');
             return;
         }
 
-        if (!skillCategories || skillCategories.length === 0) {
-            this.showState('error', 'No skills found.');
-            return;
-        }
-
-        const skillsHTML = skillCategories.map(category => this.createSkillCategoryHTML(category)).join('');
-        const skillsTitle = this.skillsContainer.querySelector('h3');
+        let htmlContent;
         
-        if (skillsTitle) {
-            skillsTitle.insertAdjacentHTML('afterend', skillsHTML);
+        if (type === 'skills' && Array.isArray(content) && content.length > 0) {
+            const skillsHTML = content.map(category => this.createSkillCategoryHTML(category)).join('');
+            htmlContent = `<h3>Skills</h3>${skillsHTML}`;
+        } else if (type === 'skills' && (!content || content.length === 0)) {
+            htmlContent = `
+                <h3>Skills</h3>
+                <div class="error-message">
+                    <p>No skills found.</p>
+                </div>
+            `;
         } else {
-            this.skillsContainer.innerHTML = '<h3>Skills</h3>' + skillsHTML;
+            htmlContent = `
+                <h3>Skills</h3>
+                <div class="${type}-message">
+                    <p>${content}</p>
+                </div>
+            `;
         }
-    }
 
-    showState(type, message) {
-        if (!this.skillsContainer) return;
-        
-        this.skillsContainer.innerHTML = `
-            <h3>Skills</h3>
-            <div class="${type}-message">
-                <p>${message}</p>
-            </div>
-        `;
+        this.skillsContainer.innerHTML = htmlContent;
     }
 
     async init() {
-        this.showState('loading', 'Loading skills...');
+        this.displayState('loading', 'Loading skills...');
         const skillCategories = await this.fetchSkills();
-        this.renderSkills(skillCategories);
+        this.displayState('skills', skillCategories);
     }
 }
 

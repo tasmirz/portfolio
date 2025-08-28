@@ -1,0 +1,40 @@
+{
+  "projects": [
+    {
+      "name": "kuet-dull-edge",
+      "description": "Repository for team KUET_dull_edge (Learnathon-By-Geeky-Solutions)",
+      "languages": ["TypeScript"],
+      "imageUrl": "https://via.placeholder.com/300x180/504945/fbf1c7?text=kuet-dull-edge"
+    },
+    {
+      "name": "Computer Computer",
+      "description": "A 29-bit, 5-stage pipelined RISC computer with dedicated assembler",
+      "languages": ["Jupyter Notebook"],
+      "imageUrl": "https://via.placeholder.com/300x180/665c54/fbf1c7?text=Computer+Computer"
+    },
+    {
+      "name": "calendar-cse1205",
+      "description": "Calendar application (likely course assignment)",
+      "languages": ["C++"],
+      "imageUrl": "https://via.placeholder.com/300x180/7c6f64/fbf1c7?text=calendar-cse1205"
+    },
+    {
+      "name": "rpg-cse1206",
+      "description": "HTML-based RPG game (likely course assignment)",
+      "languages": ["HTML"],
+      "imageUrl": "https://via.placeholder.com/300x180/3c3836/fbf1c7?text=rpg-cse1206"
+    },
+    {
+      "name": "Strassen-and-Closest-Pair-Point-Algorithm-Analysis",
+      "description": "Analysis of Strassen's matrix multiplication and closest-pair point-set algorithms",
+      "languages": ["Jupyter Notebook"],
+      "imageUrl": "https://via.placeholder.com/300x180/282828/fbf1c7?text=Strassen-and-Closest-Pair-Point-Algorithm-Analysis"
+    },
+    {
+      "name": "Terra",
+      "description": "Interactive application collecting data from NASA landslide, real-time precipitation, slope, and terrain sources",
+      "languages": ["JavaScript"],
+      "imageUrl": "https://via.placeholder.com/300x180/458588/fbf1c7?text=Terra"
+    }
+  ]
+}

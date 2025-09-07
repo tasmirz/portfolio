@@ -1,16 +1,16 @@
 {
-  "skillCategories": [
+  "categories": [
     {
-      "name": "Programming",
-      "skills": ["C++", "C", "Python", "PHP", "SQL", "CSS", "JavaScript", "TypeScript"]
+      "Name": "Programming",
+      "Skills": ["C++", "C", "Python", "PHP", "SQL", "CSS", "JavaScript", "TypeScript"]
     },
     {
-      "name": "Technology",
-      "skills": ["Git", "Linux", "Web App Dev", "ASP.NET", "Node.js", "Docker"]
+      "Name": "Technology",
+      "Skills": ["Git", "Linux", "Web App Dev", "ASP.NET", "Node.js", "Docker"]
     },
     {
-      "name": "Software",
-      "skills": ["Blender", "Inkscape", "Illustrator", "Photoshop", "GIMP", "VS Code"]
+      "Name": "Software",
+      "Skills": ["Blender", "Inkscape", "Illustrator", "Photoshop", "GIMP", "VS Code"]
     }
   ]
 }

@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="skills.aspx.cs" Inherits="_71.Admin.Skills" %>
+<%@ Page Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="skills.aspx.cs" Inherits="_71.Admin.Skills" %>
 
 <asp:Content ID="TitleContent" ContentPlaceHolderID="TitleContent" runat="server">Skills Management</asp:Content>
 
@@ -8,7 +8,7 @@
         <p class="text-sm text-secondary">Organize my skill categories and skills</p>
     </div>
     <div class="flex align-center gap-4">
-        <a href="<%= ResolveUrl("~/admin/dashboard.aspx") %>" class="btn btn-outline">
+        <a href="<%= ResolveUrl("~/dashboard.aspx") %>" class="btn btn-outline">
             <i class="material-icons">arrow_back</i>
             Back to Dashboard
         </a>
